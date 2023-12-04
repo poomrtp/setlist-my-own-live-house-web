@@ -30,7 +30,7 @@ function Layout({ children }: ILayoutProps) {
       <main className="grow flex flex-row p-4 md:p-8 overflow-y-auto gap-4">
         {children}
       </main>
-      <footer className="flex justify-center border-t border-neutral-800 p-4">
+      <footer className="flex justify-center border-t border-base-content/20 p-4">
         <a
           href="https://github.com/poomrtp/"
           target="_blank"
