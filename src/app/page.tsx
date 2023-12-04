@@ -1,30 +1,48 @@
 'use client';
 
-import { useSession, signOut, signIn } from 'next-auth/react';
+import SpotifyBtn from '@/components/buttons/spotifyBtn';
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function Home() {
   const session = useSession();
+  const router = useRouter();
 
-  if (!session || session.status !== 'authenticated') {
-    return (
-      <div>
-        <h1>Spotify Web API Typescript SDK in Next.js</h1>
-        <button onClick={() => signIn('spotify')}>Sign in with Spotify</button>
-      </div>
-    );
-  }
+  useEffect(() => {
+    if (!session || session.status !== 'authenticated') {
+      return;
+    }
+    router.push('/most-listened');
+  }, [session, router]);
 
   return (
-    <div>
-      <p>Logged in as {session.data.user?.name}</p>
-      <button onClick={() => signOut()}>Sign out</button>
-      <div>Welcome to My Spotify data app</div>
-      <Link href={'/most-listened'}>
-        <button className="px-4 py-2 bg-black rounded-md text-white">
-          Most Listened
-        </button>
-      </Link>
+    <div className="w-full h-full">
+      <div className="hero">
+        <div className="hero-content text-center flex-col lg:flex-row">
+          <div>
+            <h1 className="text-5xl font-bold">
+              Welcome to My Spotify data app
+            </h1>
+            {session?.status === 'authenticated' ? (
+              <>
+                <p className="py-6">{`Let's create your set list`}</p>
+                <Link href={'/most-listened'}>
+                  <button className="btn btn-primary">Get Started</button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <p className="py-6">Sign in to get started</p>
+                <div className="flex justify-center">
+                  <SpotifyBtn />
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

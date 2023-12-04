@@ -15,7 +15,7 @@ function ArtistCard({ name, image }: ArtistCardProps) {
         width={640}
         className="w-full h-64 object-cover mb-4 rounded"
       />
-      <h2 className="text-xl font-semibold mb-2">{name}</h2>
+      <h2 className="text-xl text-black font-semibold mb-2">{name}</h2>
     </div>
   );
 }

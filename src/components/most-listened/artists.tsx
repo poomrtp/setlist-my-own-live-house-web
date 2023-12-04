@@ -17,7 +17,6 @@ function Artists() {
       'GET',
       'me/top/artists'
     );
-    console.table(res.items);
     setResults(res);
     setIsLoading(false);
   }, []);
