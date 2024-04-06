@@ -1,15 +1,8 @@
-import React, {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-  createRef,
-  Ref,
-} from 'react';
+import Image from 'next/image';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { toPng } from 'html-to-image';
 import SetListPaper from './setListPaper';
 import sdk from '@/lib/spotify-sdk/clientInstance';
-import { Page, SearchResults } from '@spotify/web-api-ts-sdk';
 import { TrackSearchResult } from '@/interfaces/spotify.interface';
 import { useSession } from 'next-auth/react';
 
@@ -64,6 +57,16 @@ function Tracks() {
             );
           })}
         </ul>
+        <div className="mt-2 py-3 flex justify-center">
+          <Image
+            className="w-auto h-6"
+            src={'/Spotify_Logo_RGB_Black.png'}
+            alt="spotify logo"
+            width={77}
+            height={24}
+            quality={100}
+          />
+        </div>
       </SetListPaper>
 
       <div className="mt-4 flex justify-center">

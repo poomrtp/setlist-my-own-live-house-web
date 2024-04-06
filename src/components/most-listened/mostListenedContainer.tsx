@@ -12,7 +12,7 @@ function MostListenedContainer() {
 
   const content = {
     [TopMeType.TRACK]: <Tracks />,
-    [TopMeType.ARTIST]: <Artists />,
+    // [TopMeType.ARTIST]: <Artists />,
   };
 
   return (
@@ -20,15 +20,15 @@ function MostListenedContainer() {
       <div className="w-full">
         <p>Logged in as {session?.data?.user?.name}</p>
         <div className="w-full flex justify-center gap-2 my-2">
-          <button className="btn" onClick={() => setTopMeData(TopMeType.TRACK)}>
+          {/* <button className="btn" onClick={() => setTopMeData(TopMeType.TRACK)}>
             Tracks
-          </button>
-          <button
+          </button> */}
+          {/* <button
             className="btn"
             onClick={() => setTopMeData(TopMeType.ARTIST)}
           >
             Artists
-          </button>
+          </button> */}
         </div>
         {content[topMeData]}
       </div>

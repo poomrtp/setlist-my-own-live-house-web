@@ -1,4 +1,4 @@
 export enum TopMeType {
-  ARTIST = 'artist',
+  // ARTIST = 'artist',
   TRACK = 'track',
 }
