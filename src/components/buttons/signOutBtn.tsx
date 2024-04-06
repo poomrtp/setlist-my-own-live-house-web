@@ -8,7 +8,7 @@ export default function SignOutBtn({ className }: HTMLAttributes<any>) {
         className={`btn btn-ghost ${className}`}
         onClick={() => signOut()}
       >
-        Sign-out
+        Sign out
       </button>
     </>
   );

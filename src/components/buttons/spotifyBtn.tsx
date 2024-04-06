@@ -15,7 +15,7 @@ export default function SignInBtn({ className }: HTMLAttributes<any>) {
           width={24}
           height={24}
         />
-        Sign-in
+        Sign in
       </button>
     </>
   );
