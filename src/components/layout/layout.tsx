@@ -1,11 +1,9 @@
 'use client';
-import Image from 'next/image';
-import { FC, HTMLAttributes, ReactNode, useEffect, useState } from 'react';
+import { ReactNode } from 'react';
 import ThemeSwitcher from './themeSwitcher';
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { ArrowTopRightOnSquare } from '@/icons';
 import SignOutBtn from '../buttons/signOutBtn';
-import SignInBtn from '../buttons/spotifyBtn';
 
 interface ILayoutProps {
   children?: ReactNode;
@@ -17,7 +15,7 @@ function Layout({ children }: ILayoutProps) {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="border-b border-base-content/20 p-2 md:px-8 flex justify-between place-items-center gap-4">
-        <div>Spotifine Live House</div>
+        <div>My own Live House</div>
         <div className="flex justify-end place-items-center">
           <ThemeSwitcher />
           <div>

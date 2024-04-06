@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Tracks from './tracks';
 import { TopMeType } from '@/enums/spotifyTop.enum';
-import Artists from './artists';
 import { useSession } from 'next-auth/react';
 
 function MostListenedContainer() {

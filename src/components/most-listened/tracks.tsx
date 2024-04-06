@@ -36,7 +36,7 @@ function Tracks() {
     const dataUrl = await toPng(paperRef.current);
 
     const link = document.createElement('a');
-    link.download = `spotifine-setlist-${new Date().getTime()}.png`;
+    link.download = `setlist-${new Date().getTime()}.png`;
     link.href = dataUrl;
     link.click();
   }
